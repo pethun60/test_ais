@@ -1,2 +1,2 @@
 print "hejsan ais igen"
-print "newbranch"
+print "newbranch added remote"
