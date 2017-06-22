@@ -6,7 +6,7 @@ import serial
 import argparse
 
 __author__ = 'Pethun'
- 
+
 parser = argparse.ArgumentParser(description='sends serial data to tcp as client ')
 parser.add_argument('-s','--serialdevice', help='Serial device /dev/ttyS0',required=True)
 parser.add_argument('-n','--hostname',help='host name server1', required=True)
@@ -21,11 +21,11 @@ parser.add_argument('-p4','--port4',help='Port number server4 Integer', required
 
 
 args = parser.parse_args()
- 
+
 ## show values ##
 print ("serialdevice: %s" % args.serialdevice )
 print ("Output file: %s" % args.hostname )
- 
+
 
 
 
@@ -61,11 +61,13 @@ ser = serial.Serial(serialport_name,timeout=1)
 
 # Get serial data and send to servers
 while True:
-    	serialdata = ser.readline()
+    try:
+
+
 	# print 'bytes to read %s ' % (bytesToRead)
     	# print 'serial data %s ' % (serialdata)
     	# Send data
-    	# print "servername %s port %s" % (servername, port) 
+    	# print "servername %s port %s" % (servername, port)
     	if serialdata:
 	    print >>sys.stderr, 'sending "%s"' % serialdata
 	    sent = sock.sendto(serialdata, server_address)
@@ -76,7 +78,9 @@ while True:
 	    if server_address4:
 	        sentagain = sock.sendto(serialdata, server_address4)
 	    serialdata=''
-
+    except Exception as e:
+        raise
+        serialdata = ser.readline()
     # Receive response
     #print >>sys.stderr, 'waiting to receive'
     #data, server = sock.recvfrom(4096)
