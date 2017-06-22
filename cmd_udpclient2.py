@@ -62,7 +62,7 @@ ser = serial.Serial(serialport_name,timeout=1)
 # Get serial data and send to servers
 while True:
     try:
-
+        serialdata = ser.readline()
 
 	# print 'bytes to read %s ' % (bytesToRead)
     	# print 'serial data %s ' % (serialdata)
@@ -79,8 +79,9 @@ while True:
 	        sentagain = sock.sendto(serialdata, server_address4)
 	    serialdata=''
     except Exception as e:
-        raise
-        serialdata = ser.readline()
+        print "nu blev det fel"
+        print e.args
+
     # Receive response
     #print >>sys.stderr, 'waiting to receive'
     #data, server = sock.recvfrom(4096)
