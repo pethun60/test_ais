@@ -1,6 +1,6 @@
 # test_ais
 This is a small python script to be usd to send serial data received from a ais receiver to marine trafik, aishub or similar 
-website. 
+website. I use it in a beaglebone black computer and created it since I didn't get aisdispatcher_arm_glibc to work. Could be used in Raspberry pi I suppose.
 
 sends serial data to tcp as client
 
