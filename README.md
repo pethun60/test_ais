@@ -26,4 +26,17 @@ optional arguments:
 ex:
 cmd_udpclient2.py -s /dev/ttyACM0 -n data.aishub.net -p 2342 -n2 5.9.207.224 -p2 6690 -n3 192.168.1.103 -p3 5555 >> startais.log; exec bash"
 
-This will send all incoming serial ais data from serial interface /dev/ttyACM0 to AIS hub and Marinetraffic plus my own internal database.
+This will send all incoming serial ais data from serial interface /dev/ttyACM0 to AIS hub and Marinetraffic plus my own internal database.06EuOwiIvIwnSwe7wvlOwwsAwwnSGmwvwt,0*13
+"
+sending "!AIVDM,1,1,,A,13u>D9?P0OQ<FtLQKk3:q?wP2@M8,0*07
+"
+sending "!AIVDM,2,1,7,A,53u=`e000001<LQ222058dv2222222222222220m1h43340Ht2P000000000,0*0C
+"
+sending "!AIVDM,2,2,7,A,00000000000,2*23
+"
+sending "!AIVDM,1,1,,A,13aSPvh0011:F:6QRoms`CcP00Ro,0*77
+"
+sending
+
+ais serial data from the receiver:
+
